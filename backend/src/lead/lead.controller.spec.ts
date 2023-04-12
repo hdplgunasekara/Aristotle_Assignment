@@ -4,14 +4,12 @@ import { LeadService } from './lead.service';
 
 describe('LeadController', () => {
   let leadController: LeadController;
-
   const mockLeadService = {
-    create: jest.fn((dto) => {
-      return {
-        ...dto,
-      };
-    }),
+    create: jest.fn().mockImplementation((lead) => lead),
+    findAllPendingLeads: jest.fn().mockImplementation(() => []),
+    updateLead: jest.fn().mockImplementation((id, lead) => lead),
   };
+
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
@@ -26,7 +24,7 @@ describe('LeadController', () => {
   });
 
   describe('Lead', () => {
-    it('should be defined"', () => {
+    it('should be defined', () => {
       expect(leadController).toBeDefined();
     });
 
@@ -51,5 +49,10 @@ describe('LeadController', () => {
         status: 'Pending',
       });
     });
+
+    it('should return all leads', () => {
+      expect(leadController.getAllLeads()).toBe({ });
+    }
+    );
   });
 });

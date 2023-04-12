@@ -14,7 +14,7 @@ export class LeadController {
   }
 
   @Get('/')
-  async getClient() {
+  async getAllLeads() {
     const lead: Lead[] = await this.leadService.findAllPendingLeads();
     return lead;
   }
