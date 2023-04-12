@@ -14,7 +14,8 @@ Sometimes in lead modal box it will show red color error message at bottom as 'Y
 API end point
 
 1.For create lead send POST request with json object to - https://aristotleassignment-production.up.railway.app/leads
-  json object format -
+
+  json object format for post -
   {
         "firstName": "Amal",
         "lastName": "Silva",
@@ -24,7 +25,7 @@ API end point
         "personalizationLine": "sample personalization line",
         "status": "Pending"
   }
-  
+
 2.For get all leads send GET request to - https://aristotleassignment-production.up.railway.app/leads
 
 3.For update lead(status and feedback) send patch request to - https://aristotleassignment-production.up.railway.app/leads
