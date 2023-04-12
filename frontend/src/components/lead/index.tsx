@@ -1,8 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import LeadModel from "../../models/lead"; 
 
-import LeadModel from "../../models/lead";
-// import {LeadData} from "../../../types/leadData";
 export interface LeadData {
   _id: string;
   firstName: string;
@@ -20,7 +19,7 @@ const Lead = () => {
   useEffect(() => {
     const fetchLeads = async () => {
       try {
-        const response = await axios.get<LeadData[]>(`http://localhost:3001/leads/`);
+        const response = await axios.get<LeadData[]>(process.env.API_URL+`/leads/`);
         setLeads(response.data);
       } catch (error) {
         console.error(error);

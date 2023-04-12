@@ -9,8 +9,6 @@ describe('LeadController', () => {
     create: jest.fn(dto => {
         return {
             ...dto,
-            _id:Date.now(),
-            __v:Date.now(),
         }
     }),
     };
@@ -46,8 +44,6 @@ describe('LeadController', () => {
         jobTitle: "Tech Lead",
         personalizationLine: "This is a personalization line",
         status: "Pending",  
-        _id:expect.any(Number),
-        __v:expect.any(Number),
     });
     });
   });

@@ -10,7 +10,7 @@ const LeadModel = (props:any) =>  {
 
   const validateEmail = async (email: string) => {
     try { 
-      const response = await axios.post(`http://localhost:3001/email/`, {
+      const response = await axios.post(process.env.API_URL+`/email/`, {
         email,
       });
       return response.data;
