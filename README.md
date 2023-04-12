@@ -2,6 +2,7 @@
 Nest JS , React Js , Mongo DB , TypeScript
 
 Frontend Live Url (Netlify) - https://6436ded14987a9006e1965d4--capable-truffle-7b70c6.netlify.app/
+
 Backend Live Url (Railway) - https://aristotleassignment-production.up.railway.app/
 
 
@@ -14,7 +15,6 @@ API end point
 
 1.For create lead send POST request with json object to - https://aristotleassignment-production.up.railway.app/leads
   json object format -
-  ================================
   {
         "firstName": "Amal",
         "lastName": "Silva",
@@ -24,8 +24,7 @@ API end point
         "personalizationLine": "sample personalization line",
         "status": "Pending"
   }
-  ================================
-
+  
 2.For get all leads send GET request to - https://aristotleassignment-production.up.railway.app/leads
 
 3.For update lead(status and feedback) send patch request to - https://aristotleassignment-production.up.railway.app/leads
