@@ -4,11 +4,8 @@ import { LeadController } from './lead.controller';
 import { LeadService } from './lead.service';
 import { LeadSchema } from './schema/lead.schema';
 
-
 @Module({
-  imports: [
-    MongooseModule.forFeature([{ name: 'Lead', schema: LeadSchema  }]),
-  ],
+  imports: [MongooseModule.forFeature([{ name: 'Lead', schema: LeadSchema }])],
   controllers: [LeadController],
   providers: [LeadService],
 })

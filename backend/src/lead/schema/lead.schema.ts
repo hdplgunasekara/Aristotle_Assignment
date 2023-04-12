@@ -12,25 +12,25 @@ export const LeadSchema = new Schema({
   email: {
     type: String,
     required: true,
-    },
+  },
   company: {
     type: String,
     required: true,
-    },
+  },
   jobTitle: {
     type: String,
     required: true,
-    },
+  },
   personalizationLine: {
     type: String,
-    required: true, 
-    },
+    required: true,
+  },
   status: {
     type: String,
     required: true,
-    },
+  },
   feedback: {
     type: String,
     required: false,
-    },
+  },
 });

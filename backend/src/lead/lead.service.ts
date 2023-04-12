@@ -10,22 +10,20 @@ dotenv.config();
 
 @Injectable()
 export class LeadService {
-  constructor(
-    @InjectModel('Lead') private readonly leadModel: Model<Lead>,
-  ) {}
+  constructor(@InjectModel('Lead') private readonly leadModel: Model<Lead>) {}
   async create(CreateLeadDto: CreateLeadDto): Promise<Lead> {
     try {
-        const lead = await this.leadModel.create(CreateLeadDto);
-        return lead;
+      const lead = await this.leadModel.create(CreateLeadDto);
+      return lead;
     } catch (error) {
       Logger.error(error.message);
       throw new Error(error.message);
     }
   }
 
-  async findAllPendingLeads (): Promise<Lead[]> {
+  async findAllPendingLeads(): Promise<Lead[]> {
     try {
-      const lead = await this.leadModel.find({ status : 'Pending' });
+      const lead = await this.leadModel.find({ status: 'Pending' });
       if (lead.length === 0) {
         throw new NotFoundException('Leads not found');
       }
@@ -36,13 +34,10 @@ export class LeadService {
     }
   }
 
-  async updateLead(
-    id: string,
-    updateLeadDto: UpdateLeadDto,
-  ): Promise<Lead> {
+  async updateLead(id: string, updateLeadDto: UpdateLeadDto): Promise<Lead> {
     try {
       if (updateLeadDto.status === 'Rejected') {
-        if(updateLeadDto.feedback === undefined) {
+        if (updateLeadDto.feedback === undefined) {
           throw new NotFoundException('Feedback is required');
         }
       }

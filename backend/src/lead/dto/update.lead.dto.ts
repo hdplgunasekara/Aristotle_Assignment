@@ -1,4 +1,4 @@
-export class UpdateLeadDto {;
-    readonly status: string;
-    readonly feedback?: string;
-   }
+export class UpdateLeadDto {
+  readonly status: string;
+  readonly feedback?: string;
+}
